@@ -1,0 +1,122 @@
+body{
+    background-color: black;
+    font-family: "Inter", sans-serif;
+    color: white;
+}
+
+.header{
+    display: flex;
+    align-items: center;
+    margin-bottom: 20px;
+}
+
+.img svg{
+    display: flex;
+    width: 33.5px;
+    height: 33.5px;
+    position: relative;
+    left: 7%;
+    transform: translateX(-50%);
+}
+
+.header h1{
+    margin: 0;
+    font-size: 20px;
+    font-family: "Kameron", serif;
+    font-weight: 400;
+    flex-grow: 1;
+}
+
+h1.welcome{
+    color: white;
+    font-family: "Inter", sans-serif;
+    font-weight: bold;
+    font-size: 45px;
+    text-align: center;
+}
+
+p.welcome{
+    font-weight: 100;
+    text-align: center;
+}
+
+h1, p{
+    margin: 0px;
+    padding: 0px;
+}
+
+.form-container{
+    display: flex;
+    flex-direction: column;
+    width: 450px;
+    margin: 0 auto;
+    padding: 20px;
+    border-radius: 10px;
+}
+
+.form-group{
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 15px;
+}
+
+.form-inline{
+    display: flex;
+    justify-content: space-between;
+}
+
+.form-inline .form-group{
+    flex: 1;
+    margin-right: 10px;
+}
+
+.form-inline .form-group:last-child{
+    margin-right: 0;
+}
+
+input, select{
+    padding: 10px;
+    border: 1px solid white;
+    background-color: rgba(255, 255, 255, 0);
+    color: white;
+    font-size: 14px;
+    font-family: "Inter", sans-serif;
+}
+
+select{
+    background-color: black;
+    color: white;
+}
+
+label{
+    font-weight: 200 bold;
+}
+
+.form-check{
+    display:flex;
+    align-items: center;
+    margin-bottom: 15px;
+}
+  
+.form-check input{
+    margin-right: 10px;
+    transform: scale(1.5);
+}
+
+.butt_in{
+    margin: auto;
+    border: 2px solid white;
+    font-size: medium;
+    font-weight: bold;
+    text-align: center;
+    font-family: "Inter", sans-serif;
+    color: white;
+    width: 450px;
+    padding: 10px;
+    background: rgba(0, 0, 0, 0.1);
+    cursor: pointer;
+}
+
+::-ms-reveal{
+    filter: invert(100%);
+}

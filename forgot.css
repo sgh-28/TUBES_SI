@@ -1,0 +1,91 @@
+body{
+    font-family: "Inter", sans-serif;
+    color: white; 
+}
+
+.img svg{
+    width: 100px;
+}
+
+h1.hotel{
+    font-weight: 200;
+    font-size: 40px;
+}
+
+h1.forgot{
+    font-size: 35px;
+    margin-top: 15px;
+}
+
+h1.hotel, img{
+    margin: 0;
+    padding: 0;
+}
+
+p.welcome{
+    font-weight: 100;
+    text-align: center;
+}
+
+.form-container{
+    display: flex;
+    flex-direction: column;
+    width: 450px;
+    margin: 0 auto;
+    padding: 20px;
+    border-radius: 10px;
+}
+
+.form-group{
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 15px;
+    margin-top: 10;
+}
+
+input{
+    padding: 10px;
+    border: 1px solid white;
+    background-color: rgba(255, 255, 255, 0);
+    font-size: 14px;
+    font-family: "Inter", sans-serif;
+    color: white;
+}
+
+label{
+    font-weight: 200 bold;
+}
+
+.but_in{
+    margin: auto;
+    border: 2px solid white;
+    font-size: medium;
+    font-weight: bold;
+    text-align: center;
+    font-family: "Inter", sans-serif;
+    color: white;
+    width: 450px;
+    padding: 10px;
+    background: rgba(0, 0, 0, 0.1);
+    cursor: pointer;
+    margin-top: 20lvh;
+}
+
+.but_back{
+    display: flex;
+    margin: auto;
+    border: 2px solid white;
+    font-size: medium;
+    font-weight: bold;
+    justify-content: center;
+    color: white;
+    width: 225px;
+    padding: 10px;
+    cursor: pointer;
+    margin-top: 10px;
+    background-color: rgba(0, 0, 0, 0.1);
+}
+
+a{
+    text-decoration: none;
+}

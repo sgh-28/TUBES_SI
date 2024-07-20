@@ -1,0 +1,95 @@
+body {
+    font-family: 'Inter', sans-serif;
+    padding: 0;
+    margin: 0;
+    background: url('BACKGROUND\ .jpg') no-repeat center center fixed;
+    background-size: cover;
+    background-blend-mode: darken;
+    background-color: rgba(12, 10, 10, 0.6);
+}
+
+.toolbar {
+    background-color: rgba(0, 0, 0, 0.1);
+    color: white;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 20px;
+    border-bottom: 1px solid white;
+}
+
+.logo{
+    width: 50px;
+}
+
+.toolbar img {
+    height: 50px;
+}
+.toolbar .nav-links {
+    display: flex;
+    align-items: center;
+}
+.nav-links a:hover {
+    background-color: white  ;
+    color: black;
+    transition: ease all 0.5 s;
+}
+
+.company-name {
+    color: #fff;
+    margin-left: 20px;
+    margin-right: auto;
+    font-family: 'Kameron', serif;
+    font-size: 30px;
+    font-weight: bold;
+}
+
+.container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    padding: 70px;
+}
+.image-container {
+    position: relative;
+    margin: 10px;
+}
+.image-container img {
+    width: 250px;
+    height: 225px;
+    border-radius: 10px;
+    transition: transform 0.3s;
+}
+.image-container:hover img {
+    transform: scale(1.1);
+}
+.bars {
+    display:none;
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+.image-container:hover .bars {
+    display: flex;
+}
+.bar {
+    width: 100px;
+    height: 45spx;
+    margin: 20px 0;
+    background-color: black;
+    text-align: center;
+    line-height: 40px;
+    color: white;
+    text-decoration: none;
+    border-radius: 5px;
+    transition: background-color 0.3s;
+}
+.bar:hover {
+    background-color: #555;
+}

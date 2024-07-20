@@ -1,0 +1,115 @@
+body{
+    color: white;
+    font-family: "Inter", sans-serif;
+    background-image: url('HOME.jpg');
+    background-color: rgba(12, 10, 10, 0.6);
+    background-blend-mode: darken;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-size: 100%;
+}
+
+.container {
+    display: flex;
+    align-items: center;
+}
+
+svg {
+    display: flex;
+    width: 50px; /* Atur lebar logo sesuai kebutuhan */
+    height: auto;
+}
+
+h1.hotel {
+    display: flex;
+    margin-left: 10px; /* Atur jarak antara logo dan teks */
+    font-family: "Kameron", serif;
+    font-weight: 400;
+}
+
+h1.hotel, hr{
+    margin: 5px;
+}
+
+.content{
+    /* background-color: red; */
+    display: flex;
+    flex-direction: column;
+    /* justify-content: center; */
+    align-items: center;
+    padding: 20px 0px;
+    margin-top: 20px;
+}
+
+.content-table{
+    width: 70%;
+    /* padding: 10px 0px; */
+    /* border: 1px solid #444444; */
+    /* background-color: aquamarine; */
+}
+
+.content-table table{
+    border-collapse: separate;
+    border-spacing: 0px 5px;
+    /* border: 1px solid rgba(0, 0, 0, 0.3); */
+}
+
+.main-table{
+    width: 100%;
+    /* background-color: blueviolet; */
+}
+
+.main-table th{
+    padding: 15px 0px;
+    background-color: #d9d9d9;
+    color: black;
+}
+
+.main-table th:first-child{
+    border-radius: 25px 0px 0px 0px;
+}
+
+.main-table th:last-child{
+    border-radius: 0px 25px 0px 0px;
+}
+
+.main-table tr:last-child td:first-child{
+    border-radius: 0px 0px 0px 25px;
+}
+
+.main-table tr:last-child td:last-child{
+    border-radius: 0px 0px 25px 0px;
+}
+
+.main-table tr:last-child td{
+    border-bottom: none;
+}
+
+.main-table td{
+    text-align: center;
+    padding: 8px 0px;
+    /* background-color: #f8f8f8; */
+    border-bottom: 1px solid rgba(0, 0, 0, 0.3);
+}
+
+.menu{
+    display: flex;
+    gap: 50px;
+    /* height: auto; */
+    /* background-color: aqua; */
+}
+
+.menu .list{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 100%;
+    font-weight: 400;
+    font-family: "Kameron";
+    margin: auto;
+    margin-left: 340px;
+    /* background-color: blueviolet; */
+    padding: 0px 10px;
+    transition: all 300ms ease-in-out;
+}
