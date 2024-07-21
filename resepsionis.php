@@ -49,7 +49,7 @@
         <div class="image-container">
             <img src="daftar.png" alt="Image 3">
             <div class="bars">
-                <a href="page1.html" class="bar">Data Tamu</a>
+                <a href="caridata.html" class="bar">Data Tamu</a>
                 <a href="page1.html" class="bar">Pembayaran</a>
             </div>
         </div>
