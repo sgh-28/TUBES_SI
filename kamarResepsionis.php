@@ -8,15 +8,11 @@
 </head>
 
 <?php
-
     session_start();
     require 'conn.php';
 
     $sql = "SELECT * FROM tipe_kamar";
     $result = $conn->query($sql);
-
-    // echo "<script>console.log('result: '". $result .")</script>"
-
 ?>
 
 <body>
@@ -37,71 +33,22 @@
     </div>
     <div class="container">
         <?php
-            if ($result -> num_rows > 0) {
-                $noKamar = 1;
-                while($row = $result->fetch_assoc()) {
+            if ($result->num_rows > 0) {
+                while ($row = $result->fetch_assoc()) {
                     echo '<div class="room-card">';
-                    echo '<h2 class="room-name">'. $row['nama_tipe_kamar'] .'</h2>';
+                    echo '<h2 class="room-name">' . $row['nama_tipe_kamar'] . '</h2>';
                     echo '<div class="card">';
-                    echo '<div class="card-room"><img src="'. $row['foto'] .'" alt="Room Image"></div>';
-                    echo '<p class="price">$'. $row['harga_kamar'] .'</p>';
-                    echo '<a href="'. $row['nama_tipe_kamar'] .'.php">';
-                    echo '<button>Detail Room</button></a>';
+                    echo '<div class="card-room"><img src="' . $row['foto'] . '" alt="Room Image"></div>';
+                    echo '<p class="price">$' . $row['harga_kamar'] . '</p>';
+                    echo '<a href="jumlahKamarResepsionis.php?tipe_kamar=' . urlencode($row['nama_tipe_kamar']) . '">';
+                    echo '<button>Jumlah Kamar</button></a>';
                     echo '</div></div>';
-                    $noKamar += 1;
                 }
             }
-            
         ?>
-
-        <!-- <div class="room-card">
-            <h2 class="room-name">Suites Room</h2>
-            <div class="card">
-                <div class="card-room">
-                    <img src="SUITES ROOM.jpg" alt="Room Image">
-                </div>
-                <p class="price">$125</p>
-                <a href="detailroom1.html">
-                <button>Detail Room</button></a>
-            </div>
-        </div>
-        <div class="room-card">
-            <h2 class="room-name">Twin Room</h2>
-            <div class="card">
-                <div class="card-room">
-                    <img src="twinn.jpg" alt="Room Image">
-                </div>
-                <p class="price">$100</p>
-                <a href="detailroom2.html">
-                <button>Detail Room</button></a>
-            </div>
-        </div>
-        <div class="room-card">
-            <h2 class="room-name">Single Room</h2>
-            <div class="card">
-                <div class="card-room">
-                    <img src="single.jpg" alt="Room Image">
-                </div>
-                <p class="price">$75</p>
-                <a href="detailroom4.html">
-                <button>Detail Room</button></a>
-            </div>
-        </div>
-        <div class="room-card">
-            <h2 class="room-name">Presidential Room</h2>
-            <div class="card">
-                <div class="card-room">
-                    <img src="presidential.jpg" alt="Room Image">
-                </div>
-                <p class="price">$150</p>
-                <a href="detailroom3.html">  
-                <button>Detail Room</button></a>
-            </div>
-        </div> -->
         <a href="Home Tamu.php">
-        <button>BACK</button>
-    </a>
+            <button>BACK</button>
+        </a>
     </div>
-    
 </body>
 </html>

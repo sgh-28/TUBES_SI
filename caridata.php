@@ -145,7 +145,8 @@
                     
                 xxxx@gmail.com
             </div>
-            <button>Detail</button>
+            <a href="hasilcariDatatamu.html" class="hasilcariDatatamu">
+            <button>Detail</button></a>
         </div>
         <div class="user-item">
             <div>
@@ -160,7 +161,8 @@
                     </svg>
                 xxxx@gmail.com
             </div>
-            <button>Detail</button>
+            <a href="hasilcariDatatamu.html" class="hasilcariDatatamu">
+            <button>Detail</button></a>
         </div>
         <div class="user-item">
             <div>
@@ -175,11 +177,13 @@
                     </svg>
                 xxxx@gmail.com
             </div>
-            <button>Detail</button>
+            <a href="hasilcariDatatamu.php" class="hasilcariDatatamu">
+            <button>Detail</button></a>
         </div>
     </div>
     <div class="back-button">
-        <button>Back</button>
+        <a href="resepsionis.php" class="resepsionis">
+        <button>Back</button></a>
     </div>
 </body>
 </html>
