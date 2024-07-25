@@ -115,7 +115,7 @@
                 </select>
             </div>
             <div class="form-group">
-                <label for="room">Room Number</label>
+                <label for="room"> Type Room</label>
                 <input type="text" id="room" placeholder="">
             </div>
         </div>
@@ -124,13 +124,11 @@
             <div class="form-group">
                 <label for="history-date">Date</label>
                 <input type="text" id="history-date" placeholder="dd/mm/yyyy">
-                <button>Detail</button>
             </div>
         </div>
     </div>
     <div class="footer">
-        <a href="resepsionis.php" class="back-button">Back</a>
-        <a href="#" class="checkout-button">Checkout</a>
+        <a href="caridata.php" class="back-button">Back</a>
     </div>
 </body>
 </html>

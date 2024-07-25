@@ -37,19 +37,19 @@
         <div class="image-container">
             <img src="pesanan.png" alt="Image 1">
             <div class="bars">
-                <a href="page1.html" class="bar">Pesanan</a>
+                <a href="RoomOrder.php" class="bar">Room Order</a>
             </div>
         </div>
         <div class="image-container">
             <img src="kamar.png" alt="Image 2">
             <div class="bars">
-                <a href="kamarResepsionis.php" class="bar">Kamar</a>
+                <a href="kamarResepsionis.php" class="bar">Room</a>
             </div>
         </div>
         <div class="image-container">
             <img src="daftar.png" alt="Image 3">
             <div class="bars">
-                <a href="caridata.php" class="bar">Data Tamu</a>
+                <a href="caridata.php" class="bar">Guest Data</a>
             </div>
         </div>
         <div class="image-container">

@@ -18,7 +18,7 @@
                     </span>
                 <p>World Hotel & Resort</p>
             </div>
-            <p>History</p>
+            <p>Pesanan</p>
         </nav>
     <div class="content w-full">
         <div class="content-table">
@@ -36,7 +36,7 @@
                         $email = isset($_SESSION['email']) ? $_SESSION['email'] : '';
 
 
-                        $sql = "SELECT ID_tipe_kamar_Hotel, Tanggal_Checkin, Tanggal_Checkout, Total_Transaksi FROM memesan WHERE Email_Tamu = '$email'";
+                        $sql = "SELECT ID_tipe_kamar_Hotel, Tanggal_Checkin, Tanggal_Checkout, Total_Transaksi FROM memesan";
                         $result = $conn->query($sql);
                         
                         if ($result-> num_rows > 0) {
@@ -57,7 +57,7 @@
                 </table>
         <div>
         <div class="flex w-full justify-center p-2">
-            <a href='./Home Tamu.php' class="bg-slate-800 text-slate-50 px-12 py-2 rounded-lg transition-all duration-300 hover:bg-slate-500">Back</a>   
+            <a href='./resepsionis.php' class="bg-slate-800 text-slate-50 px-12 py-2 rounded-lg transition-all duration-300 hover:bg-slate-500">Back</a>   
         </div>
     </div>
 </body>
