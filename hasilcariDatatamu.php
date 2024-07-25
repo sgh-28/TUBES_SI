@@ -23,18 +23,51 @@
             flex-grow: 1;
         }
         .profile, .history {
+            display: flex;
             border: 1px solid #fff;
             padding: 20px;
             width: 45%;
             box-sizing: border-box;
-            margin: 0 10px;
+            margin: 0 auto;
+            flex-direction: column;
         }
+
+        .profile .form-group, .history .form-group {
+            display: flex;
+            flex-direction: column;
+            margin-bottom: 15px;
+        }
+
+        .form-inline {
+            display: flex;
+            align-items: center; /* Align items vertically in the center */
+            justify-content: space-between;
+        }
+
+        .form-inline .form-group {
+            margin-right: 0; /* Ensure no margin on the right side */
+        }
+
+        .form-inline .form-group input {
+            width: 150px; /* Adjust width as needed */
+            margin-right: 10px; /* Add some spacing between the inputs */
+        }
+
+        .form-inline .form-group:last-child input {
+            margin-right: 0; /* Remove right margin for the last input */
+        }
+
+
         .profile h2, .history h2 {
             text-align: center;
         }
-        .profile .form-group, .history .form-group {
+
+        /* .profile .form-group, .history .form-group {
+            display: flex;
             margin-bottom: 15px;
-        }
+            width: 615px;
+        } */
+
         .profile .form-group label, .history .form-group label {
             display: block;
             margin-bottom: 5px;
@@ -114,18 +147,22 @@
                     <option value="female">FEMALE</option>
                 </select>
             </div>
-            <div class="form-group">
-                <label for="room"> Type Room</label>
-                <input type="text" id="room" placeholder="">
-            </div>
         </div>
         <div class="history">
             <h2>History</h2>
-            <div class="form-group">
-                <label for="history-date">Date</label>
-                <input type="text" id="history-date" placeholder="dd/mm/yyyy">
+            <div class="form-inline">
+                <div class="form-group">
+                    <label for="history-date">Date</label>
+                    <input type="text" id="history-date" placeholder="dd/mm/yyyy">
+                </div>
+                <div class="form-group">
+                    <label for="room">Type Room</label>
+                    <input type="text" id="room" placeholder="">
+                </div>
             </div>
         </div>
+    </div>
+
     </div>
     <div class="footer">
         <a href="caridata.php" class="back-button">Back</a>
