@@ -95,6 +95,9 @@
             cursor: pointer;
             font-size: 16px;
         }
+        .img{
+            width: 25px;
+        }
     </style>
 </head>
 <body>
@@ -139,57 +142,18 @@
             if ($result->num_rows > 0) {
                 while($row = $result->fetch_assoc()) {
                     echo "<div class='user-item'>";
-                    echo "<div>";
-                    echo "<svg width='42' height='41' viewBox='0 0 84 82' fill='none' xmlns='http://www.w3.org/2000/svg' xmlns:xlink='http://www.w3.org/1999/xlink'>";
-                    echo "<rect width='84' height='82' fill='url(#pattern0_2514_205)/>";
-                    echo "<defs>";
-                    echo "<pattern id='pattern0_2514_205' patternContentUnits='objectBoundingBox' width='1' height='1'>";
-                    echo "<use xlink:href='#image0_2514_205' transform='matrix(0.0108466 0 0 0.0111111 0.0119048 0)'/>";
-                    echo "</pattern>";
-                    echo "<image id='image0_2514_205' width='90' height='90' xlink:href='data:image/png;base64,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'/>";
-                    echo "</defs>";
+                    echo "<div class='img'>";
+                    echo "<svg xmlns='http://www.w3.org/2000/svg' fill='none' viewBox='0 0 24 24' stroke-width='1.5' stroke='currentColor' class='size-6'>";
+                    echo "<path stroke-linecap='round' stroke-linejoin='round' d='M17.982 18.725A7.488 7.488 0 0 0 12 15.75a7.488 7.488 0 0 0-5.982 2.975m11.963 0a9 9 0 1 0-11.963 0m11.963 0A8.966 8.966 0 0 1 12 21a8.966 8.966 0 0 1-5.982-2.275M15 9.75a3 3 0 1 1-6 0 3 3 0 0 1 6 0Z' />";
                     echo "</svg>";
-                    echo "<span>" . htmlspecialchars($row['email']) . "</span>";
+                    echo "<span>" . ($row['email']) . "</span>";
                     echo "</div>";
-                    echo "<a href='hasilcariDatatamu.php' class='hasilcariDatatamu'><button>Detail</button></a>";
+                    echo "<a href='hasilcariDatatamu.php?email=" . urlencode($row['email']) ."'class='hasilcariDatatamu'><button>Detail</button></a>";
                     echo "</div>";
                 }
             }
             $conn->close();
         ?>    
-
-        <div class="user-item">
-            <div>
-                <svg width="42" height="41" viewBox="0 0 84 82" fill="none" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
-                    <rect width="84" height="82" fill="url(#pattern0_2514_205)"/>
-                    <defs>
-                    <pattern id="pattern0_2514_205" patternContentUnits="objectBoundingBox" width="1" height="1">
-                    <use xlink:href="#image0_2514_205" transform="matrix(0.0108466 0 0 0.0111111 0.0119048 0)"/>
-                    </pattern>
-                    <image id="image0_2514_205" width="90" height="90" xlink:href="data:image/png;base64,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"/>
-                    </defs>
-                </svg>
-                coba
-            </div>
-            <a href="hasilcariDatatamu.php" class="hasilcariDatatamu"><button>Detail</button></a>
-        </div>
-
-        <div class="user-item">
-            <div>
-                <svg width="42" height="41" viewBox="0 0 84 82" fill="none" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
-                    <rect width="84" height="82" fill="url(#pattern0_2514_205)"/>
-                    <defs>
-                    <pattern id="pattern0_2514_205" patternContentUnits="objectBoundingBox" width="1" height="1">
-                    <use xlink:href="#image0_2514_205" transform="matrix(0.0108466 0 0 0.0111111 0.0119048 0)"/>
-                    </pattern>
-                    <image id="image0_2514_205" width="90" height="90" xlink:href="data:image/png;base64,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"/>
-                    </defs>
-                </svg>
-                coba
-            </div>
-            <a href="hasilcariDatatamu.html" class="hasilcariDatatamu">
-            <button>Detail</button></a>
-        </div>
        
     </div>
     <div class="back-button">

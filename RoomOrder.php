@@ -24,7 +24,7 @@
         <div class="content-table">
             <table class="main-table">
                 <tr>
-                    <!-- <th class="first-column">kode_transaksi</th> -->
+                    <th class="first-column">Kode Transaksi</th>
                     <th>Tipe Kamar</th>
                     <th>Tanggal Checkin</th>
                     <th>Tanggal Checkout</th>
@@ -36,13 +36,14 @@
                         $email = isset($_SESSION['email']) ? $_SESSION['email'] : '';
 
 
-                        $sql = "SELECT ID_tipe_kamar_Hotel, Tanggal_Checkin, Tanggal_Checkout, Total_Transaksi FROM memesan";
+                        $sql = "SELECT Kode_Transaksi, ID_tipe_kamar_Hotel, Tanggal_Checkin, Tanggal_Checkout, Total_Transaksi FROM memesan";
                         $result = $conn->query($sql);
                         
                         if ($result-> num_rows > 0) {
                             // Output data dari setiap baris
                             while($row = $result->fetch_assoc()) {
                                 echo "<tr class='text-slate-800'>";
+                                echo "<td>" . $row["Kode_Transaksi"] . "</td>";
                                 echo "<td>" . $row["ID_tipe_kamar_Hotel"] . "</td>";
                                 echo "<td>" . $row["Tanggal_Checkin"] . "</td>";
                                 echo "<td>" . $row["Tanggal_Checkout"] . "</td>";
