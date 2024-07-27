@@ -1,13 +1,13 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<link rel="stylesheet" href="style.css">
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <script src="https://cdn.tailwindcss.com"></script>
-<title>Document</title>
+<title>Scrollable Table</title>
 </head>
 <body>
+
 <div class="h-screen w-full bg-slate-100">
         <nav class="flex text-slate-200 w-full justify-between items-center bg-slate-900 px-6 py-4">
             <div class="flex items-center gap-3">
@@ -20,46 +20,50 @@
             </div>
             <p>Pesanan</p>
         </nav>
-    <div class="content w-full">
-        <div class="content-table">
-            <table class="main-table">
-                <tr>
-                    <th class="first-column">Kode Transaksi</th>
-                    <th>Tipe Kamar</th>
-                    <th>Tanggal Checkin</th>
-                    <th>Tanggal Checkout</th>
-                    <th>Total Transaksi</th>    
-                </tr>
+
+    <div class="flex flex-col items-center w-full h-full p-4">
+        <div class="content-table overflow-y-auto max-h-[400px] w-full bg-white shadow-md rounded-lg">
+            <table class="min-w-full divide-y divide-gray-200">
+                <thead class="sticky bg-gray-200">
+                    <tr>
+                        <th class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">Kode Transaksi</th>
+                        <th class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">Tipe Kamar</th>
+                        <th class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">Tanggal Checkin</th>
+                        <th class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">Tanggal Checkout</th>
+                        <th class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">Total Transaksi</th>    
+                    </tr>
+                </thead>
+                <tbody class="bg-white divide-y divide-gray-200">
                     <?php
                         session_start();
                         require 'conn.php'; 
                         $email = isset($_SESSION['email']) ? $_SESSION['email'] : '';
 
-
                         $sql = "SELECT Kode_Transaksi, ID_tipe_kamar_Hotel, Tanggal_Checkin, Tanggal_Checkout, Total_Transaksi FROM memesan";
                         $result = $conn->query($sql);
-                        
+
                         if ($result-> num_rows > 0) {
-                            // Output data dari setiap baris
                             while($row = $result->fetch_assoc()) {
-                                echo "<tr class='text-slate-800'>";
-                                echo "<td>" . $row["Kode_Transaksi"] . "</td>";
-                                echo "<td>" . $row["ID_tipe_kamar_Hotel"] . "</td>";
-                                echo "<td>" . $row["Tanggal_Checkin"] . "</td>";
-                                echo "<td>" . $row["Tanggal_Checkout"] . "</td>";
-                                echo "<td>" . $row["Total_Transaksi"] . "</td>";
+                                echo "<tr>";
+                                echo "<td class='px-6 py-4 whitespace-nowrap text-sm font-medium text-gray-900'>" . $row["Kode_Transaksi"] . "</td>";
+                                echo "<td class='px-6 py-4 whitespace-nowrap text-sm text-gray-500'>" . $row["ID_tipe_kamar_Hotel"] . "</td>";
+                                echo "<td class='px-6 py-4 whitespace-nowrap text-sm text-gray-500'>" . $row["Tanggal_Checkin"] . "</td>";
+                                echo "<td class='px-6 py-4 whitespace-nowrap text-sm text-gray-500'>" . $row["Tanggal_Checkout"] . "</td>";
+                                echo "<td class='px-6 py-4 whitespace-nowrap text-sm text-gray-500'>" . $row["Total_Transaksi"] . "</td>";
                                 echo "</tr>";
                             }
                         } else {
-                            echo "<tr><td colspan='4' class='text-slate-800'>Tidak ada data</td></tr>";
+                            echo "<tr><td colspan='5' class='px-6 py-4 whitespace-nowrap text-sm text-gray-500'>Tidak ada data</td></tr>";
                         }
                         $conn->close();
-                        ?>
-                </table>
-        <div>
+                    ?>
+                </tbody>
+            </table>
+        </div>
         <div class="flex w-full justify-center p-2">
-            <a href='./resepsionis.php' class="bg-slate-800 text-slate-50 px-12 py-2 rounded-lg transition-all duration-300 hover:bg-slate-500">Back</a>   
+            <a href='./resepsionis.php' class="bg-slate-800 text-slate-50 px-12 py-2 rounded-lg transition-all duration-300 hover:bg-slate-500">Back</a>
         </div>
     </div>
+</div>
 </body>
 </html>
