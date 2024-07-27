@@ -3,34 +3,29 @@
     <title>World Hotel & Resort</title>
     <style>
         body {
-            background-color: #f1f4f9;
-            color: black;
+            background-color: black;
+            color: white;
             font-family: Arial, sans-serif;
         }
         .container {
             text-align: center;
-            margin-top: 20px;
+            margin-top: 50px;
         }
         .logo-svg {
             width: 50px; 
             height: 50px; 
         }
         form {
-            margin-top: 40px;
             display: inline-block;
             text-align: left;
             width: 50%;
-            min-width: 300px;
-            padding: 20px;
-            border-radius: 10px;
+            min-width: 300px; 
         }
         input[type="text"], input[type="email"], input[type="tel"], input[type="date"], select {
             width: 100%;
             padding: 10px;
             margin: 5px 0;
             box-sizing: border-box;
-            border-radius: 10px;
-            font-weight: bold; 
         }
         .form-group {
             margin-bottom: 15px;
@@ -40,37 +35,40 @@
             margin-bottom: 5px;
         }
         .form-group input, .form-group select {
-            background-color: white;
+            background-color: #333;
             border: none;
-            color: black;
-            border-radius: 10px;
-            box-shadow: 0 10px 14px rgba(0, 0, 0, 0.2);
+            color: white;
         }
         .button-group {
             display: flex;
+            gap: 5px;
             justify-content: space-between;
-            gap:10px;
         }
-        .button-group input , a{
+        .button-group input, a {
             width: 49.3%;
             padding: 10px 20px;
             border: none;
-            background-color: #1e293b;
+            background-color: #555;
             color: white;
             cursor: pointer;
-            border-radius: 10px;
             font-size: 14px;
+            font-weight:500;
+        }
+
+        .button-group a{
             display: flex;
             justify-content: center;
+            font-size: 14px;
+            font-weight: 500;
             text-decoration: none;
         }
+
         .button-group input:hover, a:hover{
             background-color: #777;
-            transition: 0.2s all ease;
         }
         hr {
             border: none;
-            border-top: 2px solid black;
+            border-top: 2px solid white;
             margin: 20px auto;
             width: 100%;
         }
@@ -86,9 +84,7 @@
             margin-right: 0;
         }
     </style>
-</head>
-
-<?php
+    <?php
     session_start();
     require 'conn.php';
 
@@ -145,7 +141,7 @@
     
     $conn->close();
     ?>
-
+</head>
 <body>
 
 <div class="container">
@@ -156,10 +152,10 @@
     </span>
     <h1>World Hotel & Resort</h1>
     <hr>
-    <form action=" " method="post"> 
+    <form action="" method="post"> 
         <div class="form-group">
             <label for="email">Email Address</label>
-            <input type="email" id="email" name="email" value="<?php echo $emailSession ?>" readonly>
+            <input type="email" id="email" name="email" value="<?php echo $email ?>">
         </div>
         <div class="form-group">
             <label for="nama">Name</label>
@@ -176,16 +172,15 @@
             </div>
             <div class="form-group">
                 <label for="gender">Gender</label>
-                <select id="gender" name="gender" required>
-                    <option value="MALE" <?php echo ($gender == 'MALE') ? 'selected' : ''?>>MALE</option>
-                    <option value="FEMALE" <?php echo ($gender == 'FEMALE') ? 'selected' : ''?>>FEMALE</option>
+                <select id="gender" name="gender">
+                    <option value="male" <?php echo ($gender == 'MALE') ? 'selected' : ''?> >MALE</option>
+                    <option value="female" <?php echo ($gender == 'FEMALE') ? 'selected' : ''?> >FEMALE</option>    
                 </select>
             </div>
         </div>
         <div class="button-group">
-            <input type="submit" value="Edit">
-            <!-- <input type="button" value="Back" onclick=" "> -->
-            <a href="resepsionis.php">Back</a>
+            <input type="submit" value="Edit" width= "50%">
+            <a href="Home Tamu.php">Back</a>
         </div>
     </form>
 </div>

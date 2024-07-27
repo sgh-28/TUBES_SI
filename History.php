@@ -8,8 +8,8 @@
 <title>Document</title>
 </head>
 <body>
-<div class="h-screen w-full bg-slate-100">
-        <nav class="flex text-slate-200 w-full justify-between items-center bg-slate-900 px-6 py-4">
+<div class="h-screen w-full bg-black">
+        <nav class="flex text-slate-200 w-full justify-between items-center bg-black px-6 py-4">
             <div class="flex items-center gap-3">
                 <span class="min-w-11 max-h-11">
                         <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"  stroke="currentColor">
@@ -20,16 +20,22 @@
             </div>
             <p>History</p>
         </nav>
-    <div class="content w-full">
-        <div class="content-table">
+        
+    <hr>
+
+    <div class="content w-full flex flex-col items-center p-4">
+        <div class="content-table overflow-y-auto max-h-[400px] bg-b shadow-md rounded-lg">
             <table class="main-table">
-                <tr>
-                    <!-- <th class="first-column">kode_transaksi</th> -->
-                    <th>Tipe Kamar</th>
-                    <th>Tanggal Checkin</th>
-                    <th>Tanggal Checkout</th>
-                    <th>Total Transaksi</th>    
-                </tr>
+                <thead>
+                    <tr>
+                        <!-- <th class="first-column">kode_transaksi</th> -->
+                        <th>Tipe Kamar</th>
+                        <th>Tanggal Checkin</th>
+                        <th>Tanggal Checkout</th>
+                        <th>Total Transaksi</th>    
+                    </tr>
+                </thead>
+                <tbody>
                     <?php
                         session_start();
                         require 'conn.php'; 
@@ -42,7 +48,7 @@
                         if ($result-> num_rows > 0) {
                             // Output data dari setiap baris
                             while($row = $result->fetch_assoc()) {
-                                echo "<tr class='text-slate-800'>";
+                                echo "<tr class='px-6 py-4 whitespace-nowrap text-sm font-medium text-white'>";
                                 echo "<td>" . $row["ID_tipe_kamar_Hotel"] . "</td>";
                                 echo "<td>" . $row["Tanggal_Checkin"] . "</td>";
                                 echo "<td>" . $row["Tanggal_Checkout"] . "</td>";
@@ -54,8 +60,11 @@
                         }
                         $conn->close();
                         ?>
+                    </tbody>
                 </table>
+            </div>
         <div>
+    </div>
         <div class="flex w-full justify-center p-2">
             <a href='./Home Tamu.php' class="bg-slate-800 text-slate-50 px-12 py-2 rounded-lg transition-all duration-300 hover:bg-slate-500">Back</a>   
         </div>
