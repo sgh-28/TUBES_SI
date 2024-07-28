@@ -103,19 +103,7 @@
                     has a small kitchen like an apartment.</p>
                 <h4>Fasilitas Suite Room:</h4>
                 <ul>
-                    <li>separate living room</li>
-                    <li>dining table</li>
-                    <li>AC</li>
-                    <li>IDD telephone line</li>
-                    <li>TV LCD 42”</li>
-                    <li>Pool view</li>
-                    <li>Storage box for valuables</li>
-                    <li>Coffee and tea making facilities</li>
-                    <li>I-Pod docking port</li>
-                    <li>All suites are non-smoking</li>
-                    <li>Internet access</li>
-                    <li>Mini fridge</li>
-                    <li>Hair dryer</li>
+                    
                 </ul>
                 <p><strong>$150</strong></p>
             </div>

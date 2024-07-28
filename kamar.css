@@ -24,6 +24,8 @@
     min-height: 100vh;
     position: relative; 
     z-index: 1; 
+    font-family: Arial;
+  
   }
   
   body::before {
@@ -122,6 +124,7 @@
     width: calc(25% - 20px);
     min-width: 200px;
     text-align: center;
+    font-family: Arial, Helvetica, sans-serif;
   }
   
   .room-name {
@@ -142,6 +145,7 @@
   .card h2 {
     font-size: 1.5em;
     margin: 10px 0;
+    font-family: Arial;
   }
   
   .card .price {
