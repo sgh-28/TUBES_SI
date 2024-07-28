@@ -15,7 +15,6 @@
     $result = $conn->query($sql);
 ?>
 
-
 <body bgcolor="black">
     <div class="header">
         <div class="logo">
@@ -33,7 +32,7 @@
                     echo '<div class="card">';
                     echo '<div class="card-room"><img src="' . $row['foto'] . '" alt="Room Image"></div>';
                     echo '<p class="price">$' . $row['harga_kamar'] . '</p>';
-                    echo '<a href="jumlahKamarResepsionis.php?tipe_kamar=' . urlencode($row['id_tipe_kamar']) . '">';
+                    echo '<a href="detailKamar.php?id_tipe_kamar=' . urlencode($row['id_tipe_kamar']) . '">';
                     echo '<button>Room Details</button></a>';
                     echo '</div></div>';
                 }

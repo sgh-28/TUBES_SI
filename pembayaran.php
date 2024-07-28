@@ -12,7 +12,7 @@
     session_start();
     require 'conn.php';
 
-    $idKamar = $_POST['id_kamar'];
+    $idKamar = $_POST['id_tipe_kamar'];
     $checkIn = $_POST['checkin'];
     $checkOut = $_POST['checkout'];
     $_SESSION['id_kamar'] = $idKamar;
@@ -105,7 +105,7 @@
                 </div>
             </div>
             <div class="flex justify-center w-1/2 gap-4 py-3">
-                <a href="booking_room.php">
+                <a href="booking room.php">
                 <button type="button" class="bg-slate-800 px-8 py-3 rounded-lg text-slate-50 hover:bg-slate-400 hover:text-slate-100 transition-all duration-300">Back</button></a>
                 <button type="submit" class="bg-slate-800 px-8 py-3 rounded-lg text-slate-50 hover:bg-slate-400 hover:text-slate-100 transition-all duration-300">Pay</button>
             </div>

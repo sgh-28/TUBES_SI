@@ -49,7 +49,7 @@
                 exit();
             } else {
                 // Password salah
-                echo "<script>alert('Salah password atau email');</script>";
+                echo "<script>alert('Salah password atau email'); window.location.href='login.php';</script>";
             }
         } else {
             // Jika email tidak ditemukan di kedua tabel
@@ -61,4 +61,3 @@
     $stmtResepsionis->close();
     $conn->close();
     ?>
-?>

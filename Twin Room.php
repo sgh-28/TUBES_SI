@@ -108,7 +108,6 @@
                     <li>AC</li>
                     <li>IDD telephone line</li>
                     <li>TV LCD 42”</li>
-                    <li>Pool view</li>
                     <li>Storage box for valuables</li>
                     <li>Coffee and tea making facilities</li>
                     <li>I-Pod docking port</li>
