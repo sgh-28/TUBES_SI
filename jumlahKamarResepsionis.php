@@ -114,7 +114,8 @@
         </div>
     </div>
     <div class="content">
-        <h2>Suites Room</h2>
+        
+    <h2>Suites Room</h2>
         <div class="room">
             <img src="SUITES ROOM.JPG" alt="Room Image">
             <div class="room-info">
@@ -128,6 +129,7 @@
                 </div>
             </div>
         </div>
+       
         <a href="KamarResepsionis.php" class="button-back">Back</a>
     </div>
 </body>

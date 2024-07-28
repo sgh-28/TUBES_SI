@@ -22,6 +22,7 @@
             <img src="logo.jpg" alt="World Hotel & Resort">
             <h1>World Hotel & Resort</h1>
         </div>
+        Room List
     </div>
 </div>
     <div class="container">
@@ -34,7 +35,7 @@
                     echo '<div class="card-room"><img src="' . $row['foto'] . '" alt="Room Image"></div>';
                     echo '<p class="price">$' . $row['harga_kamar'] . '</p>';
                     echo '<a href="jumlahKamarResepsionis.php?tipe_kamar=' . urlencode($row['id_tipe_kamar']) . '">';
-                    echo '<button>Jumlah Kamar</button></a>';
+                    echo '<button>Room Stock</button></a>';
                     echo '</div></div>';
                 }
             }
