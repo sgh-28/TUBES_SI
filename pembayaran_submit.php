@@ -25,12 +25,14 @@ if ($row = mysqli_fetch_assoc($result)) {
 $kodeTransaksi = 'TR' . str_pad($transactionNumber, 8, '0', STR_PAD_LEFT);
 
 // Insert into database
-$query = "INSERT INTO memesan(Email_Tamu, ID_tipe_kamar_Hotel, Tanggal_Checkin, Tanggal_Checkout, Total_Transaksi, Kode_Transaksi, payment_method) VALUES ('$email', '$idKamar', '$checkIn', '$checkOut', '$totalPayment', '$kodeTransaksi', '$paymentMethod')";
-if (mysqli_query($conn, $query)) {
-    // // Call updateRooms.php to update the room availability
-    // $_POST['id_tipe_kamar'] = $idKamar;
-    // $_POST['action'] = 'book'; // Action to book the room
+// Set status to 'ongoing'
+$status = 'ongoing';
 
+// Define the query
+$query = "INSERT INTO memesan (Email_Tamu, ID_tipe_kamar_Hotel, Tanggal_Checkin, Tanggal_Checkout, Total_Transaksi, Kode_Transaksi, payment_method, Status) VALUES ('$email', '$idKamar', '$checkIn', '$checkOut', '$totalPayment', '$kodeTransaksi', '$paymentMethod', '$status')";
+
+if (mysqli_query($conn, $query)) {
+    // Call updateJumlahKamar.php to update the room availability
     include 'updateJumlahKamar.php';
 
     echo "<script>alert('Payment successful!'); window.location.href='mybooking.php';</script>";
@@ -40,4 +42,5 @@ if (mysqli_query($conn, $query)) {
 } else {
     echo "<script>alert('Payment failed!');</script>";
 }
+
 ?>

@@ -22,6 +22,11 @@
     </nav>
     <hr>
     <div class="flex flex-col items-center w-full p-4">
+        <div class="search-container flex items-center justify-center p-[20px]">
+            <input type="text" id="searchInput" placeholder="Search Email/Phone number" class="w-[300px] p-[10px] rounded-lg">
+            <button class="ml-[10px] p-[10px] bg-white text-black cursor-pointer rounded-lg">🔍</button>
+        
+        </div>
         <div class="content-table overflow-y-auto max-h-[400px] w-full bg-white shadow-md rounded-lg">
             <table class="min-w-full divide-y divide-gray-200">
                 <thead class="bg-gray-500">
@@ -31,16 +36,17 @@
                         <th class="px-6 py-3 text-left text-xs font-medium text-gray-200 uppercase tracking-wider">Room Type</th>
                         <th class="px-6 py-3 text-left text-xs font-medium text-gray-200 uppercase tracking-wider">Checkin Date</th>
                         <th class="px-6 py-3 text-left text-xs font-medium text-gray-200 uppercase tracking-wider">Checkout Date</th>
-                        <th class="px-6 py-3 text-left text-xs font-medium text-gray-200 uppercase tracking-wider">Transaction Total</th>    
+                        <th class="px-6 py-3 text-left text-xs font-medium text-gray-200 uppercase tracking-wider">Transaction Total</th>
+                        <th class="px-6 py-3 text-left text-xs font-medium text-gray-200 uppercase tracking-wider">Status</th>
+                        <th class="px-6 py-3 text-left text-xs font-medium text-gray-200 uppercase tracking-wider">Action</th>    
                     </tr>
                 </thead>
-                <tbody class="bg-black divide-y divide-gray-500">
+                <tbody class="bg-black divide-y divide-gray-500" id="tableBody">
                     <?php
                         session_start();
                         require 'conn.php'; 
                         $email = isset($_SESSION['email']) ? $_SESSION['email'] : '';
-
-                        $sql = "SELECT Kode_Transaksi, Email_Tamu, ID_tipe_kamar_Hotel, Tanggal_Checkin, Tanggal_Checkout, Total_Transaksi FROM memesan";
+                        $sql = "SELECT Kode_Transaksi, Email_Tamu, ID_tipe_kamar_Hotel, Tanggal_Checkin, Tanggal_Checkout, Total_Transaksi, Status FROM memesan";
                         $result = $conn->query($sql);
 
                         if ($result-> num_rows > 0) {
@@ -52,6 +58,14 @@
                                 echo "<td class='px-6 py-4 whitespace-nowrap text-sm text-white'>" . $row["Tanggal_Checkin"] . "</td>";
                                 echo "<td class='px-6 py-4 whitespace-nowrap text-sm text-white'>" . $row["Tanggal_Checkout"] . "</td>";
                                 echo "<td class='px-6 py-4 whitespace-nowrap text-sm text-white'>" . $row["Total_Transaksi"] . "</td>";
+                                echo "<td class='px-6 py-4 whitespace-nowrap text-sm text-white'>" . $row["Status"] . "</td>";
+                                if ($row["Status"] == "ongoing") {
+                                    echo "<td class='px-6 py-4 whitespace-nowrap text-sm text-white'>
+                                            <button class='checkout-button bg-red-500 hover:bg-red-700 text-white font-bold py-2 px-4 rounded' data-id='" . $row["Kode_Transaksi"] . "'>Checkout</button>
+                                          </td>";
+                                } else {
+                                    echo "<td class='px-6 py-4 whitespace-nowrap text-sm text-gray-500'>Checked Out</td>";
+                                }
                                 echo "</tr>";
                             }
                         } else {
@@ -67,5 +81,47 @@
         </div>
     </div>
 </div>
+<script>
+document.addEventListener('DOMContentLoaded', function() {
+    document.getElementById('searchInput').addEventListener('input', function() {
+        const query = this.value;
+        const xhr = new XMLHttpRequest();
+        xhr.open('GET', 'searchBooking.php?query=' + encodeURIComponent(query), true);
+        xhr.onload = function() {
+            if (xhr.status === 200) {
+                const tableBody = document.getElementById('tableBody');
+                if (tableBody) {
+                    tableBody.innerHTML = xhr.responseText;
+                    attachCheckoutEvent();
+                }
+            }
+        };
+        xhr.send();
+    });
+
+    function attachCheckoutEvent() {
+        const checkoutButtons = document.querySelectorAll('.checkout-button');
+        checkoutButtons.forEach(button => {
+            button.addEventListener('click', function() {
+                const kodeTransaksi = this.getAttribute('data-id');
+                const xhr = new XMLHttpRequest();
+                xhr.open('POST', 'checkout.php', true);
+                xhr.setRequestHeader('Content-Type', 'application/x-www-form-urlencoded');
+                xhr.onload = function() {
+                    if (xhr.status === 200) {
+                        alert('Checkout successful!');
+                        location.reload();
+                    } else {
+                        alert('Checkout failed!');
+                    }
+                };
+                xhr.send('kodeTransaksi=' + encodeURIComponent(kodeTransaksi));
+            });
+        });
+    }
+
+    attachCheckoutEvent();
+});
+</script>
 </body>
 </html>

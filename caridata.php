@@ -129,12 +129,12 @@
                     
         </div>
     </div>
-    <div class="search-container">
-        <input type="text" placeholder="Search Email/Phone number">
+    <div class="search-container" method="post" onsubmit="return validateForm()" action='search.php'>
+        <input type="text" placeholder="Search Email/Phone number" id='searchInput' >
         <button>🔍</button>
     </div>
 
-    <div class="user-list">
+    <div class="user-list" id="userList">
         <?php
             require 'conn.php';
             $sql = "SELECT email FROM tamu WHERE email = email";
@@ -160,5 +160,23 @@
         <a href="resepsionis.php" class="resepsionis">
         <button>Back</button></a>
     </div>
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            document.getElementById('searchInput').addEventListener('input', function() {
+                const query = this.value;
+                const xhr = new XMLHttpRequest();
+                xhr.open('GET', 'search.php?query=' + encodeURIComponent(query), true);
+                xhr.onload = function() {
+                    if (xhr.status === 200) {
+                        const userList = document.getElementById('userList');
+                        if (userList) {
+                            userList.innerHTML = xhr.responseText;
+                        }
+                    }
+                };
+                xhr.send();
+            });
+        });
+    </script>
 </body>
 </html>

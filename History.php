@@ -56,7 +56,7 @@
                                 echo "</tr>";
                             }
                         } else {
-                            echo "<tr><td colspan='4' class='text-slate-800'>Tidak ada data</td></tr>";
+                            echo "<tr><td colspan='4' class='text-white'>Tidak ada data</td></tr>";
                         }
                         $conn->close();
                         ?>
