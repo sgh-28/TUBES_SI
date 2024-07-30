@@ -116,7 +116,7 @@
         $checkin = $row['Tanggal_Checkin'];
         $checkout = $row['Tanggal_Checkout'];
         $namaKamar = $row['nama_tipe_kamar'];
-        $total = $row['harga_kamar'];
+        $total = $row['Total_Transaksi'];
         $payment_method = $row['payment_method'];
     }else{
         $codeTransaksi = "Tidak Ada Transaksi";

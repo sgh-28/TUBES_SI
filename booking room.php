@@ -124,6 +124,16 @@
             var today = new Date().toISOString().split('T')[0];
             document.getElementById('checkin').setAttribute('min', today);
             document.getElementById('checkout').setAttribute('min', today);
+
+            document.querySelector('form').addEventListener('submit', function(event) {
+                var checkin = document.getElementById('checkin').value;
+                var checkout = document.getElementById('checkout').value;
+
+                if (checkin >= checkout) {
+                    event.preventDefault();
+                    alert('Check-out date must be after the check-in date.');
+                }
+            });
         });
 
         document.getElementById('back_button').addEventListener('click', function(event) {
