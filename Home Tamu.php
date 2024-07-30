@@ -48,7 +48,7 @@
             </div>
             <div class="company-name">World Hotel & Resort</div>
             <div class="nav-links">
-                <a href="Home Tamu.html" >Home</a>
+                <a>Home</a>
                 <div class="dropdown">
                     <button>Menu</button>
                     <div class="dropdown-content">
