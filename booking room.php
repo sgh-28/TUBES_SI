@@ -119,6 +119,13 @@
     </div>
 
     <script>
+        // Set the minimum date for the date inputs to today
+        document.addEventListener('DOMContentLoaded', function() {
+            var today = new Date().toISOString().split('T')[0];
+            document.getElementById('checkin').setAttribute('min', today);
+            document.getElementById('checkout').setAttribute('min', today);
+        });
+
         document.getElementById('back_button').addEventListener('click', function(event) {
             // Prevent the default behavior of the button
             event.preventDefault();
