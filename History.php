@@ -52,7 +52,7 @@
                                 echo "<td>" . $row["ID_tipe_kamar_Hotel"] . "</td>";
                                 echo "<td>" . $row["Tanggal_Checkin"] . "</td>";
                                 echo "<td>" . $row["Tanggal_Checkout"] . "</td>";
-                                echo "<td>" . $row["Total_Transaksi"] . "</td>";
+                                echo "<td>$" . $row["Total_Transaksi"] . "</td>";
                                 echo "</tr>";
                             }
                         } else {
